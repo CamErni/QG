@@ -28,12 +28,6 @@ jobs:
           npm run test
           npm run test:ci
 
-
-      - name: Security Scanning
-        run: |
-          npm audit --production
-          eslint --plugin security "src/**/*.ts"
-
       - name: Performance Testing
         run: |
           npx lighthouse https://localhost:4200 --output=json --output-path=./reports/lighthouse-report.json

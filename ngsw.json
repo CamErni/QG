@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1742437450238,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/10.97ce0c7b0169305d.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.4bb26548f1ff8399.js",
+        "/manifest.webmanifest",
+        "/polyfills.dc7841b9cc80b43f.js",
+        "/runtime.11d66482ae76d6e6.js",
+        "/styles.aaa3a8dd02a8a1a7.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/MaterialIcons-Regular.14b0bb77466d9f38.woff",
+        "/MaterialIcons-Regular.d1b99623aaa86364.woff2",
+        "/MaterialIcons-Regular.fa58bcb97f2ed321.ttf",
+        "/apple-touch-icon.png",
+        "/assets/ngx-rocket-logo.png",
+        "/assets/ngx-rocket-logo@192.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/10.97ce0c7b0169305d.js": "6ec54e107189a2e6a24ff959ee606e322510bfbc",
+    "/MaterialIcons-Regular.14b0bb77466d9f38.woff": "e5fa525648c74213cdeb8554aa77057f0c4d8488",
+    "/MaterialIcons-Regular.d1b99623aaa86364.woff2": "7e67acf56f6d527980504c3d0dd2a30d706e5339",
+    "/MaterialIcons-Regular.fa58bcb97f2ed321.ttf": "b582b869fe05f35f5a1d08cdf50b2b5eb37bae44",
+    "/apple-touch-icon.png": "229df2094cc590088de00ea97a1eb4e4493101d2",
+    "/assets/ngx-rocket-logo.png": "0ac53fd27406fe5a36e68285315fb0012e54058e",
+    "/assets/ngx-rocket-logo@192.png": "461b730f9c6dc818f8af9acbe62dfde24dc02d7a",
+    "/favicon.ico": "b65083d46bbf63692d5d2cdd69622e6d7ecae317",
+    "/index.html": "1941021a1254fbee5af44dc224b01a888d6533d6",
+    "/main.4bb26548f1ff8399.js": "5d7fb4e7ea0c25652641dd7c596858ff1fb58d39",
+    "/manifest.webmanifest": "e8475851947a83649816a4939fd8f786f2b2a5d9",
+    "/polyfills.dc7841b9cc80b43f.js": "2cd732118efbc813c3c5f9b8d4328ca654fe96f4",
+    "/runtime.11d66482ae76d6e6.js": "94d8c1c71de32ac2bd028b67eab7e72f2cf7c75c",
+    "/styles.aaa3a8dd02a8a1a7.css": "413fbf0cf40e7872d60a3dc3cbac00cb0de0d5a1"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

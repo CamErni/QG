@@ -27,3 +27,27 @@ jobs:
         run: |
       
           npm run test:ci
+
+      - name: End-To-End Tests
+        run: |
+      
+          npm run e2e
+
+      - name: Install Dependencies
+        run: npm install
+ 
+      - name: Build Project
+        run: npm run build
+ 
+      - name: Zip Build Artifacts
+        run: |
+          cd dist/
+          zip -r ../ngx-rocket-build.zip .
+        shell: bash
+ 
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ngx-rocket-build
+          path: ngx-rocket-build.zip
+          

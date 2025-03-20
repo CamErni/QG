@@ -26,5 +26,4 @@ jobs:
       - name: Unit and Integration Testing
         run: |
       
-          npm run test
           npm run test:ci

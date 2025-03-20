@@ -25,36 +25,6 @@ jobs:
           
       - name: Unit and Integration Testing
         run: |
-          # Run the first test command in the background
-          npm run test -- --reporter=spec > test_output.log &  
-          TEST_PID=$!  # Capture the PID of the first test command
-          TIMEOUT=300  # Set a timeout in seconds
-          CHECK_INTERVAL=30  # Check every 30 seconds
-          ELAPSED=0
-
-          while [ $ELAPSED -lt $TIMEOUT ]; do
-            if ps -p $TEST_PID > /dev/null; then
-              echo "First test process is still running, checking output..."
-              if grep -q "TOTAL: 39 SUCCESS" test_output.log; then
-                echo "First test completed successfully."
-                kill $TEST_PID  # Optionally kill the first test process
-                break  # Exit the loop to run the next command
-              fi
-              sleep $CHECK_INTERVAL
-              ELAPSED=$((ELAPSED + CHECK_INTERVAL))
-            else
-              echo "First test process has finished."
-              exit 1  # Fail the job if the process is not running
-            fi
-          done
-
-          # Run the second test command
-          npm run test:ci
-          if [ $? -ne 0 ]; then
-            echo "Second test command failed."
-            exit 1  # Fail the job if the second command fails
-          fi
-
-          echo "All tests completed successfully."
-
       
+          npm run test
+          npm run test:ci

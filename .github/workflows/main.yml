@@ -1,35 +1,40 @@
-quality_criteria:
-  static_code_analysis:
-    tools:
-      - ESLint
-      - Stylelint
-      - Prettier
-    scripts:
-      - npm run lint
-      - npm run prettier:check
-  
-  unit_and_integration_testing:
-    tools:
-      - Jasmine
-      - Karma
-      - Cypress
-    scripts:
-      - npm run test
-      - npm run test:ci
-      - npm run cypress:open
-      - npm run cypress:run
-  
-  security_scanning:
-    tools:
-      - npm audit
-      - eslint-plugin-security
-    scripts:
-      - npm audit --production
-      - eslint --plugin security "src/**/*.ts"
-  
-  performance_testing:
-    tools:
-      - Lighthouse
-      - WebPageTest
-    scripts:
-      - npx lighthouse https://localhost:4200 --output=json --output-path=./reports/lighthouse-report.json
+name: Quality Checks
+
+on: [push, pull_request]
+
+jobs:
+  quality_checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # or your desired Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Static Code Analysis
+        run: |
+          npm run lint
+          npm run prettier:check
+
+      - name: Unit and Integration Testing
+        run: |
+          npm run test
+          npm run test:ci
+          npm run cypress:open # This might need to be run in a different context
+          npm run cypress:run
+
+      - name: Security Scanning
+        run: |
+          npm audit --production
+          eslint --plugin security "src/**/*.ts"
+
+      - name: Performance Testing
+        run: |
+          npx lighthouse https://localhost:4200 --output=json --output-path=./reports/lighthouse-report.json

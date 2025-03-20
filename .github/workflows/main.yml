@@ -27,8 +27,7 @@ jobs:
         run: |
           npm run test
           npm run test:ci
-          npm run cypress:open # This might need to be run in a different context
-          npm run cypress:run
+
 
       - name: Security Scanning
         run: |

@@ -22,12 +22,14 @@ jobs:
         run: |
           npm run lint
           npm run prettier:check
-
+    
+      - name: Performance Testing
+        run: |
+          npx lighthouse https://localhost:4200 --output=json --output-path=./reports/lighthouse-report.
+          
       - name: Unit and Integration Testing
         run: |
           npm run test
           npm run test:ci
 
-      - name: Performance Testing
-        run: |
-          npx lighthouse https://localhost:4200 --output=json --output-path=./reports/lighthouse-report.json
+      
